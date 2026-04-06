@@ -3,6 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import type { Env, TokenData } from "./types.js";
 import * as whoop from "./whoop-client.js";
+import { PRIVACY_POLICY_HTML } from "./privacy-policy.js";
 
 const WHOOP_AUTH_URL = "https://api.prod.whoop.com/oauth/oauth2/auth";
 const WHOOP_TOKEN_URL = "https://api.prod.whoop.com/oauth/oauth2/token";
@@ -237,6 +238,11 @@ export default {
     // --- Health check ---
     if (url.pathname === "/health") {
       return Response.json({ status: "ok" });
+    }
+
+    // --- Privacy policy ---
+    if (url.pathname === "/privacy") {
+      return new Response(PRIVACY_POLICY_HTML, { headers: { "Content-Type": "text/html" } });
     }
 
     // --- Landing page ---
