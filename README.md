@@ -1,6 +1,6 @@
 # WHOOP MCP Server
 
-A [Model Context Protocol](https://modelcontextprotocol.io) server that connects your WHOOP health data to Claude. Ask questions about your recovery, sleep, strain, and workouts in natural language.
+A Model Context Protocol server that connects your WHOOP health data to Claude. Ask questions about your recovery, sleep, strain, and workouts in natural language.
 
 Built on [Cloudflare Workers](https://workers.cloudflare.com) for fast, globally distributed access.
 
